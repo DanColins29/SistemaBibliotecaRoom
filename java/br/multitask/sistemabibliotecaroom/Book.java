@@ -1,5 +1,6 @@
 package br.multitask.sistemabibliotecaroom;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -8,15 +9,17 @@ import androidx.room.PrimaryKey;
 public class Book {
 
     @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "name")
     private String name;
 
-    @ColumnInfo(name = "descrition")
+    @ColumnInfo(name = "description")
     private String desc;
 
     @ColumnInfo(name = "code")
-    private int cod;
+    private String cod;
 
+    //Getterers and Setterers
     public String getName() {
         return name;
     }
@@ -33,11 +36,11 @@ public class Book {
         this.desc = desc;
     }
 
-    public int getCod() {
+    public String getCod() {
         return cod;
     }
 
-    public void setCod(int cod) {
+    public void setCod(String cod) {
         this.cod = cod;
     }
 }
